@@ -1,0 +1,26 @@
+Lab 1 Writeup
+
+Team Members: CSC 365-13 Arni Tiwari and CSC 365-14 Adya Choudhary
+
+Implementation: We chose python as our programming language as we were both most comfortable with python. 
+We decided to store the students in a list of dictionaries to ease the process of searching. 
+The keys in the deictionaries were last_name for student last name, first_name for student first name, grade for student grade, classroom for the classroom, bus for bus route, gpa for gpa, teacher_last for teacher last name and teacher_first for teacher first name.
+
+Task Log:
+Arni Tiwari:
+Wrote function to parse test file
+Wrote function to search students by last name, students by last name and bus option, search students by teacher last name and output students with the same grade.
+
+This took approximately 2 hours
+
+Adya Choudhary:
+
+
+Testing:
+Arni did some preliminary manual testing and checked that the text file was being parsed correctly and the functions she wrote were giving the correct output and handling inavlid inputs.
+
+Adya did
+
+Bugs that were fixed:
+Index out of range error for parsing the text file
+NameError for some functions
