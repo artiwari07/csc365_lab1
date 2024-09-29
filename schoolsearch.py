@@ -65,20 +65,59 @@ def SearchStudent_WithGrade(students_info, grade):
     if not found:
         print(f"No students found with grade: {grade}")
 
-#TODO: Function to find students by bus route B: number
-# def SearchStudent_WithBus(students_info, bus):
+# Function to find students by bus route B: number
+def SearchStudent_WithBus(students_info, bus):
+    found = False
+    for student in students_info:
+        if student["bus"] == bus:
+            print(f'{student["last_name"]}, {student["first_name"]}, Grade: {student["grade"]}, Classroom: {student["classroom"]}')
+            found = True
 
-#TODO: Function to find students with higher gpa G: number H
-# def SearchStudent_HigherGPA(students_info, grade):
+    if not found:
+        print(f"No students found with bus route: {bus}")
 
-#TODO: Function to find students with higher gpa G: number L
-# def SearchStudent_LowerGPA(students_info, grade):
+# Function to find students with highest GPA G: number H
+def SearchStudent_HigherGPA(students_info, grade):
+    students_in_grade = [student for student in students_info if student["grade"] == grade]
+    if students_in_grade:
+        highest_gpa_student = max(students_in_grade, key=lambda x: x["gpa"])
+        print(f'{highest_gpa_student["last_name"]}, {highest_gpa_student["first_name"]}, '
+              f'GPA: {highest_gpa_student["gpa"]}, Bus: {highest_gpa_student["bus"]}, '
+              f'Teacher: {highest_gpa_student["teacher_last"]}, {highest_gpa_student["teacher_first"]}')
+    else:
+        print(f"No students found in grade {grade}")
 
-#TODO: Funtion to find average of gpa of students with the same grade A: number
-# def Average_GPA(students_info, grade):
+# Function to find students with lowest GPA G: number L
+def SearchStudent_LowerGPA(students_info, grade):
+    students_in_grade = [student for student in students_info if student["grade"] == grade]
+    if students_in_grade:
+        lowest_gpa_student = min(students_in_grade, key=lambda x: x["gpa"])
+        print(f'{lowest_gpa_student["last_name"]}, {lowest_gpa_student["first_name"]}, '
+              f'GPA: {lowest_gpa_student["gpa"]}, Bus: {lowest_gpa_student["bus"]}, '
+              f'Teacher: {lowest_gpa_student["teacher_last"]}, {lowest_gpa_student["teacher_first"]}')
+    else:
+        print(f"No students found in grade {grade}")
 
-#TODO: Function to print info of students in ascending order by grade I
-# def Print_StudentInfo(student_info):
+# Function to calculate average GPA of students in a grade A: number
+def Average_GPA(students_info, grade):
+    students_in_grade = [student for student in students_info if student["grade"] == grade]
+    if students_in_grade:
+        avg_gpa = sum(student["gpa"] for student in students_in_grade) / len(students_in_grade)
+        print(f'Grade {grade}, Average GPA: {avg_gpa:.2f}')
+    else:
+        print(f"No students found in grade {grade}")
+
+# Function to print number of students in each grade I
+def Print_StudentInfo(students_info):
+    grade_counts = {}
+    for student in students_info:
+        grade = student["grade"]
+        if grade not in grade_counts:
+            grade_counts[grade] = 0
+        grade_counts[grade] += 1
+
+    for grade in sorted(grade_counts):
+        print(f'Grade {grade}: {grade_counts[grade]} students')
 
 def main():
     student_info = read_file('students.txt')
@@ -108,14 +147,14 @@ def main():
                 SearchStudent_LowerGPA(student_info, grade)
             else:
                 SearchStudent_WithGrade(student_info, int(grade_data.strip()))
-        # elif command.startswith('B:'):
-        #     _, bus_route = command.split(':')
-        #     SearchStudent_WithBus(student_info, int(bus_route.strip()))
-        # elif command.startswith('A:'):
-        #     _, grade = command.split(':')
-        #     Average_GPA(student_info, int(grade.strip()))
-        # elif command == 'I':
-        #     Print_StudentInfo(student_info)
+        elif command.startswith('B:'):
+            _, bus_route = command.split(':')
+            SearchStudent_WithBus(student_info, int(bus_route.strip()))
+        elif command.startswith('A:'):
+            _, grade = command.split(':')
+            Average_GPA(student_info, int(grade.strip()))
+        elif command == 'I':
+            Print_StudentInfo(student_info)
         elif command == 'Q':
             print("Exiting program.")
             break
