@@ -1,0 +1,35 @@
+S: COOKUS
+
+S: InvalidName
+
+S: STAN B
+
+S: CORONADO B
+
+T: FAFARD
+
+T: VANS
+
+B: 55
+
+B: 65
+
+G: 4
+
+G: 100
+
+G: 6 H
+
+G: 5 H
+
+G: 3 L
+
+G: 90 L
+
+A: 4
+
+A: -6
+
+I
+
+Q
