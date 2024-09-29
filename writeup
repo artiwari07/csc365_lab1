@@ -1,6 +1,6 @@
 Lab 1 Writeup
 
-Team Members: CSC 365-13 Arni Tiwari and CSC 365-14 Adya Choudhary
+Team Members: CSC 365-13 Arni Tiwari and CSC 365-15 Adya Choudhary
 
 Implementation: We chose python as our programming language as we were both most comfortable with python. 
 We decided to store the students in a list of dictionaries to ease the process of searching. 
