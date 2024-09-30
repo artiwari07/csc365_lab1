@@ -14,12 +14,14 @@ Wrote function to search students by last name, students by last name and bus op
 This took approximately 2 hours
 
 Adya Choudhary:
+Wrote code to fulfill R8-R13 of the assignment. 
 
+This took approximately 1.5 hours. 
 
 Testing:
-Arni did some preliminary manual testing and checked that the text file was being parsed correctly and the functions she wrote were giving the correct output and handling inavlid inputs.
+Arni did some preliminary manual testing and checked that the text file was being parsed correctly and the functions she wrote were giving the correct output and handling invalid inputs.
 
-Adya did
+Adya did testing for functions fulfilling R4-R11 of the assignment. 
 
 Bugs that were fixed:
 Index out of range error for parsing the text file
