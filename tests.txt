@@ -1,35 +1,110 @@
+// CSC 365
+// Lab 1-a test suite
+
+// TC-1
+// Tests Requirements R3, R4
+// Search for an existing student by last name
+// expected output: COOKUS, <First Name>, <Grade>, <Classroom>, <Teacher Last Name>, <Teacher First Name>
 S: COOKUS
 
+// TC-2
+// Tests Requirements R3, R4, E1
+// Search for a non-existing student by last name (InvalidName)
+// expected output: No students found with last name: InvalidName
 S: InvalidName
 
+// TC-3
+// Tests Requirements R3, R5
+// Search for a student by last name with bus option, existing student
+// expected output: STAN, <First Name>, Bus: <Bus Route>
 S: STAN B
 
+// TC-4
+// Tests Requirements R3, R5
+// Search for a student by last name with bus option, non-existing student
+// expected output: No students found with last name: CORONADO
 S: CORONADO B
 
+// TC-5
+// Tests Requirements R3, R6
+// Search for students by teacher’s last name, existing teacher
+// expected output: <Student Last Name>, <Student First Name> for each student
 T: FAFARD
 
+// TC-6
+// Tests Requirements R3, R6, E1
+// Search for students by teacher’s last name, non-existing teacher
+// expected output: No students found with teachers with last name: VANS
 T: VANS
 
+// TC-7
+// Tests Requirements R3, R8
+// Search for students by bus route, existing bus route
+// expected output: <Last Name>, <First Name>, Grade: <Grade>, Classroom: <Classroom>
 B: 55
 
+// TC-8
+// Tests Requirements R3, R8, E1
+// Search for students by bus route, non-existing bus route
+// expected output: No students found with bus route: 65
 B: 65
 
+// TC-9
+// Tests Requirements R3, R7
+// Search for students by grade, existing grade
+// expected output: <Last Name>, <First Name> for each student in grade 4
 G: 4
 
+// TC-10
+// Tests Requirements R3, R7, E1
+// Search for students by grade, non-existing grade
+// expected output: No students found with grade: 100
 G: 100
 
+// TC-11
+// Tests Requirements R3, R9 (High GPA)
+// Search for student with the highest GPA in grade 6
+// expected output: <Student Last Name>, <Student First Name>, GPA: <Highest GPA>, Teacher: <Teacher Last Name>, <Teacher First Name>, Bus: <Bus Route>
 G: 6 H
 
+// TC-12
+// Tests Requirements R3, R9 (High GPA), E1
+// Search for student with the highest GPA in grade 5
+// expected output: <Student Last Name>, <Student First Name>, GPA: <Highest GPA>, Teacher: <Teacher Last Name>, <Teacher First Name>, Bus: <Bus Route>
 G: 5 H
 
+// TC-13
+// Tests Requirements R3, R9 (Low GPA)
+// Search for student with the lowest GPA in grade 3
+// expected output: <Student Last Name>, <Student First Name>, GPA: <Lowest GPA>, Teacher: <Teacher Last Name>, <Teacher First Name>, Bus: <Bus Route>
 G: 3 L
 
+// TC-14
+// Tests Requirements R3, R9 (Low GPA), E1
+// Search for student with the lowest GPA in a non-existing grade (90)
+// expected output: No students found with grade: 90
 G: 90 L
 
+// TC-15
+// Tests Requirements R3, R10
+// Compute the average GPA for students in grade 4
+// expected output: Grade 4, Average GPA: <Average GPA>
 A: 4
 
+// TC-16
+// Tests Requirements R3, R10, E1
+// Compute the average GPA for an invalid grade (-6)
+// expected output: No students found with grade: -6
 A: -6
 
+// TC-17
+// Tests Requirements R3, R11
+// Print information about the number of students in each grade
+// expected output: <Grade>: <Number of Students> for each grade
 I
 
+// TC-18
+// Tests Requirements R3, R13
+// Quit command
+// expected output: Program terminates
 Q
