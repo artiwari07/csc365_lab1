@@ -3,15 +3,16 @@ Lab 1 Writeup
 Team Members: CSC 365-13 Arni Tiwari and CSC 365-15 Adya Choudhary
 
 Implementation: We chose python as our programming language as we were both most comfortable with python. 
-We decided to store the students in a list of dictionaries to ease the process of searching. 
-The keys in the deictionaries were last_name for student last name, first_name for student first name, grade for student grade, classroom for the classroom, bus for bus route, gpa for gpa, teacher_last for teacher last name and teacher_first for teacher first name.
+We decided to keep the students information from list.txt in a list of dictionaries to ease the process of searching. 
+The keys in the dictionaries were last_name for student last name, first_name for student first name, grade for student grade, classroom for the classroom, bus for bus route, gpa for gpa, teacher_last for teacher last name and teacher_first for teacher first name.
+We decided to store the teachers information from teachers.txt in a list of dictionaries as well.
+The keys in the dictionaries were last_name for teacher last name, first_name for teacher first name and classroom for the classroom each teacher teaches.
 
 Task Log:
 Arni Tiwari:
-Wrote function to parse test file
-Wrote function to search students by last name, students by last name and bus option, search students by teacher last name and output students with the same grade.
+Wrote functions to fulfill NR1-NR3 of the assignment, modified reading file functions to parse through list.txt and teachers.txt. Modified functions fulfilling R4 and R6 of lab 1-a to fit the changed format.
 
-This took approximately 2 hours
+This took approximately a 2 hours
 
 Adya Choudhary:
 Wrote code to fulfill R8-R13 of the assignment. 
@@ -19,10 +20,10 @@ Wrote code to fulfill R8-R13 of the assignment.
 This took approximately 1.5 hours. 
 
 Testing:
-Arni did some preliminary manual testing and checked that the text file was being parsed correctly and the functions she wrote were giving the correct output and handling invalid inputs.
+Arni did manual testing functions NR1-NR3 of the assignment to verify the correct output and handle invalid inputs. Also retested functions of lab 1-a fulfilling requirements R4-R9. This took approximately 1 hour
 
 Adya did testing for functions fulfilling R4-R11 of the assignment. 
 
 Bugs that were fixed:
-Index out of range error for parsing the text file
 NameError for some functions
+Incorrect number of arguments passed

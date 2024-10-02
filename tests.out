@@ -1,8 +1,10 @@
-COOKUS, XUAN, Grade: 3, Classroom: 107, Teacher: FAFARD, ROCIO
+COOKUS, XUAN, Grade: 3, Classroom: 107
+Teacher: FAFARD, ROCIO
 
 No students found with last name: InvalidName
 
 No students found with last name: STAN
+
 CORONADO, DIMPLE, Bus: 52
 
 COOKUS, XUAN
@@ -64,3 +66,22 @@ Grade 4: 15 students
 Grade 6: 21 students
 
 Exiting program.
+
+COOKUS, XUAN
+ELHADDAD, SHANTE
+SWEDLUND, SHARRI
+CIGANEK, MANIE
+COVINGTON, TOMAS
+EARLY, TORY
+LINHART, LELA
+
+No students found in classroom: 278
+
+FAFARD, ROCIO
+
+No teachers found in classroom: 124
+
+FAFARD, ROCIO
+ALPERT, JONATHAN
+
+No teachers found teaching grade: 0

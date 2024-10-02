@@ -1,5 +1,5 @@
 // CSC 365
-// Lab 1-a test suite
+// Lab 1-b test suite
 
 // TC-1
 // Tests Requirements R3, R4
@@ -108,3 +108,39 @@ I
 // Quit command
 // expected output: Program terminates
 Q
+
+// TC-19
+// Tests Requirements NR1
+// Given a classroom number, list all students assigned to it
+// expected output: All students in classroom 107
+SC: 107
+
+// TC-20
+// Tests Requirements NR1
+// Given a classroom number, list all students assigned to it
+// expected output: No students found in classroom: 278
+SC: 278
+
+// TC-21
+// Tests Requirements NR2
+// Given a classroom number, find the teacher (or teachers) teaching
+// expected output: All teachers found in classroom: 107 (FAFARD, ROCIO)
+TC: 107
+
+// TC-22
+// Tests Requirements NR2
+// Given a classroom number, find the teacher (or teachers) teaching
+// expected output: No teachers found in classroom: 124
+TC: 124
+
+// TC-23
+// Tests Requirements NR3
+// Given a grade, find all teachers who teach it
+// expected output: All teachers teaching grade 3
+TC: 3
+
+// TC-24
+// Tests Requirements NR3
+// Given a grade, find all teachers who teach it
+// expected output: No teachers found teaching grade: 0
+TC: 0
