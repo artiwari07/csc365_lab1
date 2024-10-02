@@ -7,6 +7,12 @@ We decided to keep the students information from list.txt in a list of dictionar
 The keys in the dictionaries were last_name for student last name, first_name for student first name, grade for student grade, classroom for the classroom, bus for bus route, gpa for gpa, teacher_last for teacher last name and teacher_first for teacher first name.
 We decided to store the teachers information from teachers.txt in a list of dictionaries as well.
 The keys in the dictionaries were last_name for teacher last name, first_name for teacher first name and classroom for the classroom each teacher teaches.
+For the new requirements we decided to take command line instructions as follows:
+NR1 - Given a classroom number, list all students assigned to it SC: <number>
+NR2 - Given a classroom number, find the teacher (or teachers) teaching TC: <number>
+NR3 - Given a grade, find all teachers who teach it TG: <number>
+NR4 - 
+NR 5 -
 
 Task Log:
 Arni Tiwari:
