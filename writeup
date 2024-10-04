@@ -11,8 +11,8 @@ For the new requirements we decided to take command line instructions as follows
 NR1 - Given a classroom number, list all students assigned to it SC: <number>
 NR2 - Given a classroom number, find the teacher (or teachers) teaching TC: <number>
 NR3 - Given a grade, find all teachers who teach it TG: <number>
-NR4 - 
-NR 5 -
+NR4 - Report the number of enrollments per classroom CE
+NR 5 - Report GPA statistics GPA-Grade, GPA-Bus, GPA-Teacher
 
 Task Log:
 Arni Tiwari:
@@ -21,14 +21,14 @@ Wrote functions to fulfill NR1-NR3 of the assignment, modified reading file func
 This took approximately a 2 hours
 
 Adya Choudhary:
-Wrote code to fulfill R8-R13 of the assignment. 
+Wrote code to fulfill NR4 AND NR5 of this assignment. Also modified functions SeachStudent_HigherGPA and SearchStudent_LowerGPA to include teachers. 
 
 This took approximately 1.5 hours. 
 
 Testing:
 Arni did manual testing functions NR1-NR3 of the assignment to verify the correct output and handle invalid inputs. Also retested functions of lab 1-a fulfilling requirements R4-R9. This took approximately 1 hour
 
-Adya did testing for functions fulfilling R4-R11 of the assignment. 
+Adya did testing for functions fulfilling NR4 and NR5. 
 
 Bugs that were fixed:
 NameError for some functions
