@@ -88,29 +88,37 @@ def SearchStudent_WithBus(students_info, bus):
     if not found:
         print(f"No students found with bus route: {bus}")
 
-#PRINT OUT TEACHER AS WELL
-# Function to find students with highest GPA G: number H
+# Modify SearchStudent_HigherGPA to include teacher information
 def SearchStudent_HigherGPA(students_info, teachers_info, grade):
     students_in_grade = [student for student in students_info if student["grade"] == grade]
     if students_in_grade:
         highest_gpa_student = max(students_in_grade, key=lambda x: x["gpa"])
         print(f'{highest_gpa_student["last_name"]}, {highest_gpa_student["first_name"]}, '
               f'GPA: {highest_gpa_student["gpa"]}, Bus: {highest_gpa_student["bus"]}')
+        
+        # Print the teacher for this student
+        for teacher in teachers_info:
+            if teacher["classroom"] == highest_gpa_student["classroom"]:
+                print(f'Teacher: {teacher["last_name"]}, {teacher["first_name"]}')
     else:
         print(f"No students found in grade {grade}")
 
-#PRINT OUT TEACHER AS WELL
-# Function to find students with lowest GPA G: number L
+# Modify SearchStudent_LowerGPA to include teacher information
 def SearchStudent_LowerGPA(students_info, teachers_info, grade):
     students_in_grade = [student for student in students_info if student["grade"] == grade]
     if students_in_grade:
         lowest_gpa_student = min(students_in_grade, key=lambda x: x["gpa"])
         print(f'{lowest_gpa_student["last_name"]}, {lowest_gpa_student["first_name"]}, '
               f'GPA: {lowest_gpa_student["gpa"]}, Bus: {lowest_gpa_student["bus"]}')
+        
+        # Print the teacher for this student
+        for teacher in teachers_info:
+            if teacher["classroom"] == lowest_gpa_student["classroom"]:
+                print(f'Teacher: {teacher["last_name"]}, {teacher["first_name"]}')
     else:
         print(f"No students found in grade {grade}")
 
-# Function to calculate average GPA of students in a grade A: number
+#Function to calculate average GPA of students in a grade A: number
 def Average_GPA(students_info, grade):
     students_in_grade = [student for student in students_info if student["grade"] == grade]
     if students_in_grade:
@@ -166,12 +174,68 @@ def SearchTeachers_InGrade(teachers_info, students_info, grade):
     if not found:
         print(f"No teachers found teaching grade: {grade}")
 
+# NR4: Function to report classroom enrollments
+def Classroom_Enrollments(students_info):
+    classroom_counts = {}
+    for student in students_info:
+        classroom = student["classroom"]
+        if classroom not in classroom_counts:
+            classroom_counts[classroom] = 0
+        classroom_counts[classroom] += 1
+    # Print classrooms ordered by classroom number
+    for classroom in sorted(classroom_counts):
+        print(f'Classroom {classroom}: {classroom_counts[classroom]} students')
+
+# NR5: Function to report GPA statistics by grade
+def GPA_By_Grade(students_info):
+    grade_gpas = {}
+    for student in students_info:
+        grade = student["grade"]
+        if grade not in grade_gpas:
+            grade_gpas[grade] = []
+        grade_gpas[grade].append(student["gpa"])
+    
+    # Print average GPA per grade
+    for grade in sorted(grade_gpas):
+        avg_gpa = sum(grade_gpas[grade]) / len(grade_gpas[grade])
+        print(f'Grade {grade}: Average GPA = {avg_gpa:.2f}')
+
+# NR5: Function to report GPA statistics by bus route
+def GPA_By_Bus(students_info):
+    bus_gpas = {}
+    for student in students_info:
+        bus = student["bus"]
+        if bus not in bus_gpas:
+            bus_gpas[bus] = []
+        bus_gpas[bus].append(student["gpa"])
+    
+    # Print average GPA per bus route
+    for bus in sorted(bus_gpas):
+        avg_gpa = sum(bus_gpas[bus]) / len(bus_gpas[bus])
+        print(f'Bus {bus}: Average GPA = {avg_gpa:.2f}')
+
+# NR5: Function to report GPA statistics by teacher
+def GPA_By_Teacher(students_info, teachers_info):
+    teacher_gpas = {}
+    for student in students_info:
+        for teacher in teachers_info:
+            if student["classroom"] == teacher["classroom"]:
+                teacher_name = f'{teacher["last_name"]}, {teacher["first_name"]}'
+                if teacher_name not in teacher_gpas:
+                    teacher_gpas[teacher_name] = []
+                teacher_gpas[teacher_name].append(student["gpa"])
+    
+    # Print average GPA per teacher
+    for teacher_name in sorted(teacher_gpas):
+        avg_gpa = sum(teacher_gpas[teacher_name]) / len(teacher_gpas[teacher_name])
+        print(f'Teacher {teacher_name}: Average GPA = {avg_gpa:.2f}')
+
 def main():
     students_info = read_list('list.txt')
     teachers_info = read_teachers('teachers.txt')
     
     while True:
-        command = input("\nEnter a command (S[tudent], T[eacher], B[us], G[rade], A[verage], I[nfo], SC: <number>, TC: <number>, TG: <number>, Q[uit]): ")
+        command = input("\nEnter a command (S[tudent], T[eacher], B[us], G[rade], A[verage], I[nfo], SC: <number>, TC: <number>, TG: <number>, CE, GPA-Grade, GPA-Bus, GPA-Teacher, Q[uit]): ")
         if command.startswith('S:'):
             _, last_name = command.split(':')
             if 'B' in last_name:
@@ -210,6 +274,14 @@ def main():
         elif command.startswith('TG:'):
             _, grade = command.split(':')
             SearchTeachers_InGrade(teachers_info, students_info, int(grade.strip()))
+        elif command == 'CE':
+            Classroom_Enrollments(students_info)
+        elif command == 'GPA-Grade':
+            GPA_By_Grade(students_info)
+        elif command == 'GPA-Bus':
+            GPA_By_Bus(students_info)
+        elif command == 'GPA-Teacher':
+            GPA_By_Teacher(students_info, teachers_info)
         elif command == 'Q':
             break
         else:
