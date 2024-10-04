@@ -104,43 +104,68 @@ A: -6
 I
 
 // TC-18
-// Tests Requirements R3, R13
-// Quit command
-// expected output: Program terminates
-Q
-
-// TC-19
 // Tests Requirements NR1
 // Given a classroom number, list all students assigned to it
 // expected output: All students in classroom 107
 SC: 107
 
-// TC-20
+// TC-19
 // Tests Requirements NR1
 // Given a classroom number, list all students assigned to it
 // expected output: No students found in classroom: 278
 SC: 278
 
-// TC-21
+// TC-20
 // Tests Requirements NR2
 // Given a classroom number, find the teacher (or teachers) teaching
 // expected output: All teachers found in classroom: 107 (FAFARD, ROCIO)
 TC: 107
 
-// TC-22
+// TC-21
 // Tests Requirements NR2
 // Given a classroom number, find the teacher (or teachers) teaching
 // expected output: No teachers found in classroom: 124
 TC: 124
 
-// TC-23
+// TC-22
 // Tests Requirements NR3
 // Given a grade, find all teachers who teach it
 // expected output: All teachers teaching grade 3
 TC: 3
 
-// TC-24
+// TC-23
 // Tests Requirements NR3
 // Given a grade, find all teachers who teach it
 // expected output: No teachers found teaching grade: 0
 TC: 0
+
+// TC-24
+// Tests Requirement NR4
+// Report the number of enrollments by classroom
+// expected output: Classroom <Classroom Number>: <Number of Students> students for each classroom
+CE
+
+// TC-25
+// Tests Requirement NR5
+// Report GPA statistics by grade
+// expected output: Grade <Grade>: Average GPA = <Average GPA> for each grade
+GPA-Grade
+
+// TC-26
+// Tests Requirement NR5
+// Report GPA statistics by bus route
+// expected output: Bus <Bus Number>: Average GPA = <Average GPA> for each bus route
+GPA-Bus
+
+// TC-27
+// Tests Requirement NR5
+// Report GPA statistics by teacher
+// expected output: Teacher <Teacher Last Name>, <Teacher First Name>: Average GPA = <Average GPA> for each teacher
+GPA-Teacher
+
+// TC-28
+// Tests Requirements R3, R13
+// Quit command
+// expected output: Program terminates
+Q
+
